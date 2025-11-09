@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio de Gabriel Piccart</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0; padding: 0;
+        background-color: #1a1a1a;
+        color: #fff;
+        line-height: 1.6;
+    }
+    header {
+        background-color: #2c2c2c;
+        color: #00d4ff;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    nav {
+        background-color: #333;
+        padding: 10px;
+        text-align: center;
+    }
+    nav a {
+        color: #00d4ff;
+        text-decoration: none;
+        margin: 0 15px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        display: inline-block;
+    }
+    nav a:hover, nav a.active {
+        background-color: #00d4ff;
+        color: #1a1a1a;
+    }
+    .tab-content {
+        display: none;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #2c2c2c;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .tab-content.active {
+        display: block;
+    }
+    h2 {
+        color: #00d4ff;
+        border-bottom: 2px solid #00d4ff;
+        padding-bottom: 10px;
+    }
+    .profile-photo {
+        display: block;
+        margin: 0 auto 20px;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #00d4ff;
+    }
+    .project-gallery {
+        position: relative;
+        max-width: 400px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        background: #333;
+        padding: 10px;
+    }
+    .project-gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        display: block;
+    }
+    .gallery-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
+        gap: 10px;
+    }
+    .gallery-nav button {
+        background: #00d4ff;
+        color: #1a1a1a;
+        border: none;
+        padding: 5px 12px;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .gallery-nav button:hover {
+        background-color: #00a3bf;
+        color: #fff;
+    }
+    .project-text {
+        max-width: 750px;
+        margin-bottom: 30px;
+    }
+    .project-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: flex-start;
+    }
+    .project-container > div {
+        flex: 1 1 400px;
+    }
+    .sketchfab-embed-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /*16:9*/
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.7);
+        margin-top: 10px;
+        background: #000;
+    }
+    .sketchfab-embed-wrapper iframe {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+    }
+    footer {
+        background-color: #2c2c2c;
+        color: #ccc;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+    }
+    a {
+        color: #00d4ff;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Portfolio de Gabriel Piccart</h1>
+    <p>Artista 3D e Desenvolvedor de Jogos</p>
+</header>
+
+<nav>
+    <a class="tab-link active" data-tab="sobre">Sobre Mim</a>
+    <a class="tab-link" data-tab="projetos">Projetos</a>
+    <a class="tab-link" data-tab="contato">Contato</a>
+</nav>
+
+<div id="sobre" class="tab-content active">
+    <img src="foto.jpg" alt="Foto de Gabriel Piccart" class="profile-photo" />
+    <h2>Sobre Mim</h2>
+    <p>Olá! Sou Gabriel Piccart, um artista 3D apaixonado por criar mundos visuais incríveis. Com experiência em modelagem 3D, animação e desenvolvimento de jogos, trabalho para trazer ideias à vida através da arte digital. Você pode ver mais sobre minha carreira profissional no meu <a href="https://www.linkedin.com/in/gabriel-piccart/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+    <ul>
+        <li><strong>Experiência:</strong> Desenvolvedor de Jogos na [Empresa], focado em arte 3D e design de níveis.</li>
+        <li><strong>Habilidades:</strong> Blender, Unity, Maya, ZBrush, Photoshop.</li>
+        <li><strong>Educação:</strong> Bacharel em Artes Digitais pela [Universidade].</li>
+    </ul>
+</div>
+
+<div id="projetos" class="tab-content">
+    <h2>Projetos</h2>
+    <p>Confira alguns dos meus projetos no <a href="https://gabriel_piccart.artstation.com/" target="_blank" rel="noopener noreferrer">ArtStation</a>. Aqui estão destaques selecionados:</p>
+
+    <div class="project-container">
+
+        <!-- Projeto 01 - War Radio -->
+        <div class="project-item">
+            <div class="project-gallery" id="war-radio-gallery">
+                <img src="war_radio_1.jpg" alt="War Radio - Modelo Principal" />
+                <div class="gallery-nav">
+                    <button data-gallery="war-radio" data-action="prev">Anterior</button>
+                    <button data-gallery="war-radio" data-action="next">Próximo</button>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Projeto 01 - War Radio</h3>
+                <p>Mais um asset game ready focado em jogos de guerra. Esse é outra tarefa do curso de modelagem 3D da @mentorama nas aulas do @lucas.silva que me ajudou muito com feedbacks durante o processo (mesmo sendo além do que era pedido). Modelo feito em Blender (acompanhando as aulas em Maya), com menos de 30k de triângulos, texturizado e bakeado no Substance Painter (contando com texturas em 2 e 4k) em malhas distintas.</p>
+            </div>
+        </div>
+
+        <!-- Projeto 02 - Dermatric -->
+        <div class="project-item">
+            <div class="project-gallery" id="dermatric-gallery">
+                <img src="dermatric_1.jpg" alt="Dermatric Produtos" />
+                <div class="gallery-nav">
+                    <button data-gallery="dermatric" data-action="prev">Anterior</button>
+                    <button data-gallery="dermatric" data-action="next">Próximo</button>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Projeto 02 – Dermatric</h3>
+                <p>Alguns renders de uma nova linha de produtos da Dermatric, que tive o prazer de desenvolver em colaboração com os membros do Cubo Estúdio. Foi uma ótima oportunidade de unir design e realismo para valorizar cada detalhe da marca.</p>
+            </div>
+        </div>
+
+        <!-- Projeto 03 - Western Station -->
+        <div class="project-item">
+            <div class="project-gallery" id="western-station-gallery">
+                <img src="western_station_1.jpg" alt="Western Station Modelo Sculpt" />
+                <div class="gallery-nav">
+                    <button data-gallery="western-station" data-action="prev">Anterior</button>
+                    <button data-gallery="western-station" data-action="next">Próximo</button>
+                </div>
+            </div>
+            <div class="project-text">
+                <h3>Projeto 03 – Western Station</h3>
+                <p>Este foi um projeto de modelagem para uma arte mais estilizada, focando em entender melhor como passar uma "perspectiva forçada" para o 3D. Para esse propósito usei de referencia o concept do @ZC WANG. Este modelo game ready foi feito inteiramente em Blender e conta com 13,5k de triângulos (algo que fiquei muito fez de conseguir alcançar). Modelo também possuí todas os UV maps abertos para possíveis estudos de texturização futuros. <a href="https://www.artstation.com/artwork/A94OQz" target="_blank" rel="noopener noreferrer">Link para o concept</a>.</p>
+            </div>
+        </div>
+
+        <!-- Projeto 04 - Super Minigames Party! -->
+        <div class="project-item" style="max-width: 100%;">
+            <h3>Projeto 04 - Super Minigames Party!</h3>
+            <p>Aqui está mais um projeto incrível para a comunidade de Fortnite no qual tive a honra de participar! Trabalhei com a talentosa equipe da "Once Creative" e o criador de conteúdo "Derponce" para trazer à vida este mapa cheio de mini games divertidos. Esses são apenas alguns dos modelos que criei, e espero que curtam! Se quiserem ver mais de perto, entrem e joguem! Código do mapa: 4960-6953-8825</p>
+            <div class="sketchfab-embed-wrapper">
+                <iframe title="Super Minigames - 1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" 
+                allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
+                src="https://sketchfab.com/models/916a7a525fa54a678ddb878d5ecca61f/embed"></iframe>
+                <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                    <a href="https://sketchfab.com/3d-models/super-minigames-1-916a7a525fa54a678ddb878d5ecca61f" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Super Minigames - 1</a> by 
+                    <a href="https://sketchfab.com/Gabriel_Piccart" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Gabriel_Piccart</a> on 
+                    <a href="https://sketchfab.com" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Projeto 05 - Stylized Art Training -->
+        <div class="project-item" style="max-width: 100%;">
+            <h3>Projeto 05 - Stylized Art Training</h3>
+            <p>Mais um projeto para me otimizar em modelagens estilizadas. Pretendo me aprofundar cada vez mais neste estilo de arte, e espero conseguir realizar mais trabalhos da @Lilia Musina (que tem vários trabalhos incríveis por sinal). Modelo feito totalmente em Blender com menos de 40k de triângulos ao todo. <a href="https://www.artstation.com/artwork/Pl8Q8" target="_blank" rel="noopener noreferrer">Link para o concept</a></p>
+            <div class="sketchfab-embed-wrapper">
+                <iframe title="Stylized Art Training" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" 
+                allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
+                src="https://sketchfab.com/models/06fcfb3a3db443f09e32ee9f279ed55f/embed"></iframe>
+                <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                    <a href="https://sketchfab.com/3d-models/stylized-art-training-06fcfb3a3db443f09e32ee9f279ed55f" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Stylized Art Training</a> by 
+                    <a href="https://sketchfab.com/Gabriel_Piccart" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Gabriel_Piccart</a> on 
+                    <a href="https://sketchfab.com" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="margin-top: 30px;">
+        <h3>Outros Projetos no ArtStation</h3>
+        <p>Explore minha galeria completa no <a href="https://gabriel_piccart.artstation.com/" target="_blank" rel="noopener noreferrer">ArtStation</a> para ver mais trabalhos em arte conceitual, modelagem 3D e animações.</p>
+    </div>
+</div>
+
+<div id="contato" class="tab-content">
+    <h2>Contato</h2>
+    <p>Interessado em colaborar? Entre em contato comigo!</p>
+    <ul>
+        <li><strong>Email:</strong> gabrielalvespiccart@gmail.com</li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/gabriel-piccart/" target="_blank" rel="noopener noreferrer">linkedin.com/in/gabriel-piccart</a></li>
+        <li><strong>ArtStation:</strong> <a href="https://gabriel_piccart.artstation.com/" target="_blank" rel="noopener noreferrer">gabriel_piccart.artstation.com</a></li>
+        <li><strong>Sketchfab:</strong> <a href="https://sketchfab.com/Gabriel_Piccart" target="_blank" rel="noopener noreferrer">sketchfab.com/Gabriel_Piccart</a></li>
+    </ul>
+</div>
+
+<footer>
+    <p>&copy; 2023 Gabriel Piccart. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+// Navegação entre abas
+const tabLinks = document.querySelectorAll('.tab-link');
+const tabContents = document.querySelectorAll('.tab-content');
+tabLinks.forEach(link => {
+    link.addEventListener('click', e => {
+        const tabId = link.dataset.tab;
+        tabLinks.forEach(l => l.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        link.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+    });
+});
+
+// Galerias com múltiplas imagens, navegação por botão
+const galleries = {
+    'war-radio': [
+        'war_radio_1.jpg',
+        'war_radio_2.jpg',
+        'war_radio_3.jpg',
+    ],
+    'dermatric': [
+        'dermatric_1.jpg',
+        'dermatric_2.jpg',
+        'dermatric_3.jpg',
+        'dermatric_4.jpg',
+    ],
+    'western-station': [
+        'western_station_1.jpg',
+        'western_station_2.jpg',
+    ]
+};
+
+const galleryStates = {
+    'war-radio': 0,
+    'dermatric': 0,
+    'western-station': 0
+};
+
+function updateGallery(galleryId) {
+    const galleryDiv = document.getElementById(galleryId + '-gallery');
+    const imgTag = galleryDiv.querySelector('img');
+    const idx = galleryStates[galleryId];
+    imgTag.src = galleries[galleryId][idx];
+}
+
+document.querySelectorAll('.gallery-nav button').forEach(btn => {
+    btn.addEventListener('click', e => {
+        const galleryId = btn.dataset.gallery;
+        const action = btn.dataset.action;
+        let idx = galleryStates[galleryId];
+        const length = galleries[galleryId].length;
+
+        if(action === 'next') {
+            idx = (idx + 1) % length;
+        } else if(action === 'prev') {
+            idx = (idx - 1 + length) % length;
+        }
+        galleryStates[galleryId] = idx;
+        updateGallery(galleryId);
+    });
+});
+</script>
+
+</body>
+</html>
